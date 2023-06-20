@@ -1,0 +1,10 @@
+create DATABASE mydb;
+use mydb;
+CREATE TABLE document_storage (
+    s_no INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    reg_no VARCHAR(15) NOT NULL,
+    document LONGBLOB NOT NULL,
+    document_name VARCHAR(255) NOT NULL,
+    category VARCHAR(50) NOT NULL,
+    document_size INT NOT NULL
+);

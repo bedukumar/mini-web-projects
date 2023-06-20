@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Upload PDF File to MySQL Database</title>
+  </head>
+
+  <body>
+    <center>
+      <h2>TD Assignment 2</h2>
+      <h1>Submit Certificates</h1>
+      <button><a href="./a21v.html">View Your Docs</a></button> <br />
+      <br />
+      <form action="submit.php" method="POST" enctype="multipart/form-data">
+        <center>
+          <x style="color: red">*</x>
+          <input
+            type="text"
+            name="reg_no"
+            placeholder="Enter Your Register No."
+            required
+            pattern="[a-zA-Z0-9]+"
+            minlength="8"
+            maxlength="15"
+          />
+          <br />
+          <x style="color: red">*</x>
+          <select
+            name="category"
+            id="select"
+            onchange="fun(this.options[this.selectedIndex].value)"
+            required
+          >
+            <option value="" disabled selected hidden>Select Category</option>
+            <option value="extracurricular">extracurricular</option>
+            <option value="co-curricular">co-curricular</option>
+            <option value="competitive exams">competitive exams</option>
+            <option value="GRE">GRE</option>
+            <option value="TOEFL">TOEFL</option>
+            <option value="IELTS">IELTS</option>
+            <option value="GATE">GATE</option>
+            <option value="others">others</option>
+          </select>
+          <br />
+          <x id="dr" style="color: rgb(255, 152, 152)">*</x>
+          <input
+            type="text"
+            placeholder="specify if its other category"
+            name="SpCat"
+            id="SpCat"
+            disabled="true"
+            required
+            pattern="[a-zA-Z0-9]+"
+            minlength="4"
+            maxlength="50"
+          /><br />
+          <input
+            type="file"
+            name="doc_file"
+            onchange="filefun(this.value)"
+            required
+            id="FS"
+          /><br />
+          <input type="submit" name="submit" />
+        </center>
+      </form>
+    </center>
+
+    <script>
+      function fun(value) {
+        if (value == "others") {
+          document.getElementById("SpCat").disabled = false;
+          document.getElementById("SpCat").placeholder = "";
+          document.getElementById("dr").style.color = "red";
+        } else {
+          document.getElementById("SpCat").disabled = true;
+          document.getElementById("SpCat").placeholder =
+            "specify if it is other category";
+          document.getElementById("dr").style.color = "rgb(255, 152, 152)";
+          document.getElementById("SpCat").value = "";
+        }
+      }
+      function filefun(e) {
+        var ex = e.split(".").pop();
+        if (
+          !(
+            ex == "pdf" ||
+            ex == "png" ||
+            ex == "docx" ||
+            ex == "doc" ||
+            ex == "jpeg" ||
+            ex == "jpg"
+          )
+        ) {
+          document.getElementById("FS").value = "";
+          alert(
+            "Please select a file with one of these extensions\n pdf ,png ,jpg ,doc ,docx"
+          );
+        }
+      }
+    </script>
+  </body>
+</html>
