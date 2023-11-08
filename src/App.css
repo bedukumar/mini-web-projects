@@ -1,38 +1,213 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Metal+Mania&family=Poppins:wght@300;500&family=Young+Serif&display=swap');
+
+.HiddenAudience {
+  opacity: 0;
+  transform: translateX(50px);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.MovingAudience {
+  animation: moveAudience 1s forwards ease-in;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes moveAudience {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateX(50px);
   }
+
   to {
-    transform: rotate(360deg);
+    opacity: 100;
+    transform: translateX(0px);
+  }
+}
+
+
+.HiddenMusicNote {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.MovingMusicNote {
+  animation: moveMusicNote 1s forwards ease-in;
+}
+
+@keyframes moveMusicNote {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 100;
+    transform: translateY(0px);
+  }
+}
+
+
+.HiddenGC1 {
+  opacity: 0;
+  transform: translateY(-60px);
+}
+
+.MovingGC1 {
+  animation: MoveGC1 forwards ease-in;
+}
+
+@keyframes MoveGC1 {
+  from {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+
+  to {
+    opacity: 100;
+    transform: translateY(0px);
+  }
+}
+
+
+.ANM-slow {
+  animation-duration: 1.3s;
+}
+
+.ANM-med {
+  animation-duration: 1s;
+}
+
+.ANM-fast {
+  animation-duration: 0.7s;
+}
+
+.HiddenGC2 {
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+.MovingGC2 {
+  animation: MoveGC2 1s forwards ease-in;
+}
+
+@keyframes MoveGC2 {
+  from {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+
+  to {
+    opacity: 100;
+    transform: translateY(0px);
+  }
+}
+
+@media screen and (max-width: 880px) and (min-width: 700px) {
+
+  /* Your CSS styles for screens between 1300px and 700px go here */
+  #root {
+    transform: translateX(35vw);
+    zoom: 90%;
+  }
+}
+
+@media screen and (max-width: 981px) and (min-width: 881px) {
+
+  /* Your CSS styles for screens between 1300px and 700px go here */
+  #root .LargeScreen {
+    transform: translateX(25vw);
+    zoom: 90%;
+  }
+
+  #root .SmallScreen {}
+}
+
+@media screen and (max-width: 1240px) and (min-width: 981.01px) {
+
+  /* Your CSS styles for screens between 1300px and 700px go here */
+  #root {
+    transform: translateX(18vw);
+    zoom: 90%;
+  }
+}
+
+html {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+
+.HiddenGC1Mobile {
+  opacity: 0;
+  /* transform: translatex(-60px); */
+}
+
+.MovingGC1Mobile {
+  animation: MoveGC1Mobile 1s forwards ease-in;
+}
+
+@keyframes MoveGC1Mobile {
+  from {
+    opacity: 0;
+    /* transform: translateX(-60px); */
+  }
+
+  to {
+    opacity: 100;
+    /* transform: translateY(0px); */
+  }
+}
+
+.HiddenGC2Mobile {
+  opacity: 0;
+}
+
+.MovingGC2Mobile {
+  animation: MoveGC2Mobile 1s forwards ease-in;
+}
+
+@keyframes MoveGC2Mobile {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 100;
+  }
+}
+
+
+.box-justify {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+}
+
+
+.GalleryAnm {
+  animation: MovingGallery 1s forwards ease-in;
+  transform: translate(101vw);
+}
+
+@keyframes MovingGallery {
+  from {
+    transform: translate(101vw);
+  }
+
+  to {
+    transform: translate(0vw);
+  }
+}
+
+
+.GalleryReverseAnm {
+  animation: MovingGalleryReverse 1s forwards ease-in;
+  transform: translate(0vw);
+}
+
+@keyframes MovingGalleryReverse {
+  from {
+    transform: translate(0vw);
+  }
+
+  to {
+    transform: translate(101vw);
   }
 }
